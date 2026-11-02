@@ -404,10 +404,6 @@ function PageShell({ children, pageKey }) {
             "position,inset,width,height,overflow,zIndex,transformOrigin,transform,opacity,filter,y,scale",
         });
         gsap.set(revealItems, { clearProps: "opacity,filter,transform,y" });
-        if (pageHeading) {
-          gsap.set(pageHeading, { clearProps: "opacity,filter,transform,y" });
-        }
-        gsap.set(headingChars, { clearProps: "transform,willChange" });
 
         window.scrollTo(0, 0);
 
@@ -475,20 +471,6 @@ function PageShell({ children, pageKey }) {
         },
         PAGE_TRANSITION.contentDelay,
       );
-    }
-
-    timelineRef.current.to(
-      supportingRevealItems,
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1.05,
-        stagger: 0.12,
-        ease: "power3.out",
-      },
-      1.24,
-    );
 
     return () => {
       if (timelineRef.current) timelineRef.current.kill();
