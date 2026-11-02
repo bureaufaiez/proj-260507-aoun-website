@@ -7,10 +7,10 @@ https://github.com/bureaufaiez/proj-260507-aoun-website
 
 ## Cloudflare Pages — setup
 
-- **Status:** Not yet confirmed as deployed to Cloudflare Pages (2026-11-02).
+- **Status:** Deployed to Cloudflare Pages; owner confirmed successful publication (2026-11-02).
 - **Suggested Cloudflare account:** BUREAU FAIÈZ
 - **Suggested Pages project name:** `proj-260507-aoun-website`
-- **Potential default URL (unverified):** https://proj-260507-aoun-website.pages.dev/
+- **Live URL:** https://proj-260507-aoun-website.pages.dev/
 - **Framework:** React (Vite)
 - **Production branch:** `main`
 - **Build command:** `npm run build`
@@ -18,7 +18,7 @@ https://github.com/bureaufaiez/proj-260507-aoun-website
 - **Root directory:** Repository root (leave blank)
 - **Custom domain:** Not needed
 
-The exact `pages.dev` URL must be recorded after deployment. Do not treat the URL above as live until Cloudflare confirms it.
+The live URL above was supplied and confirmed by the project owner.
 
 ## Workflow — DEV → PREVIEW → LIVE
 
@@ -29,6 +29,12 @@ The exact `pages.dev` URL must be recorded after deployment. Do not treat the UR
 On Cloudflare Pages, set the production branch to `main`. Under **Settings → Builds → Branch control**, allow `preview` as the only automatic preview branch when available.
 
 Existing `codex/*` branches are preserved. The website code on `main` has not been modified as part of this setup.
+
+## Initial deployment notes
+
+- Initial Cloudflare Pages build failed with a syntax error in `src/App.jsx` at line 480.
+- Fixed the malformed page-transition effect and undefined animation references on `dev`, then promoted through `preview` to `main` (PR #10 and #11, commit `f701224`).
+- Owner subsequently confirmed successful deployment at the live URL above.
 
 ## No local installation required
 
